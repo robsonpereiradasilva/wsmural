@@ -2,8 +2,6 @@ package com.mural.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -12,8 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestTemplate;
 
  
@@ -24,7 +20,10 @@ import com.mural.repository.VagaRepository;
 
 @Controller
 public class VagaController {
-
+	
+	@Autowired
+	private VagaRepository vagaRepository;
+	
 	@GetMapping("/")
 	public String vagas (Model model) {
 		ResponseEntity <List<Vaga>> response;
