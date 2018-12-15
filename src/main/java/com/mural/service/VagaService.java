@@ -31,10 +31,6 @@ public class VagaService {
 		return vagaRepository.save(vaga);
 	}	
 	
-	@GetMapping(value="/pesquisar/{vaga}")
-	public String pesquisaVaga(@PathVariable("vaga") String vaga, Model model) {
-		model.addAllAttributes(vagaRepository.findByVagaContaining(vaga));
-		return "index";
-	}
+	
 
 }
