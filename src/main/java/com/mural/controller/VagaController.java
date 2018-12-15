@@ -50,9 +50,7 @@ public class VagaController {
 						HttpMethod.GET,
 						null,
 						new ParameterizedTypeReference<List<Vaga>>() { }
-				);
-				
-		
+				);					
 		List<Vaga> lista = response.getBody();
 		
 		
@@ -62,7 +60,7 @@ public class VagaController {
 		
 		return "index";
 	}
-	*/
+	
 	
 	@GetMapping("/")
 	public String vagas (Model model) {
@@ -79,8 +77,7 @@ public class VagaController {
 		model.addAttribute("lista", lista);	
 			
 		return "index";
-	}
-	
+	}	
 	public ResponseEntity<List<Vaga>> method(String link){
 		RestTemplate restTemplate  = new RestTemplate();
 		
@@ -92,11 +89,10 @@ public class VagaController {
 		);
 		
 		return response;
-				
-		
+					
 	}
 	
-	
+	*/
 	
 	
 }
