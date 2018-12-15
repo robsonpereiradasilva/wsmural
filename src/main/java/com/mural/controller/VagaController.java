@@ -23,17 +23,7 @@ import com.mural.repository.VagaRepository;
 
 @Controller
 public class VagaController {
-	
-	@Autowired
-	private VagaRepository vagaRepository;
-	
-	
-	@PostMapping("/cadastrar")
-	public Vaga cadastrarVaga(@Valid @RequestBody Vaga vaga) {
-		
-		return vagaRepository.save(vaga);
-	}
-	
+
 	@GetMapping("/")
 	public String vagas (Model model) {
 		ResponseEntity <List<Vaga>> response;

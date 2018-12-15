@@ -23,6 +23,10 @@ public class VagaService {
 	List<Vaga> all(){
 		return vagaRepository.findAll();
 	}
+	@PostMapping("/cadastrar")
+	public Vaga cadastrarVaga(@Valid @RequestBody Vaga vaga) {
 		
+		return vagaRepository.save(vaga);
+	}	
 
 }
