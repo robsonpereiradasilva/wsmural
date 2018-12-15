@@ -24,12 +24,12 @@
 					<th scope="col">Salário</th>					
 				</thead>
 				<tbody>
-					<tr th:each="lista : ${lista}">
+					<tr th:each="lista : ${vaga}">
 						<td th:text="${lista.id}"></td>
 						<td th:text="${lista.empresa}"></td>
 						<td th:text="${lista.vaga}"></td>
 						<td th:text="${lista.descricao}"></td>
-						<td th:text="${#numbers.formatDecimal(vaga.salario,1,2,'COMMA')}"/>				 
+						<td th:text="${#numbers.formatDecimal(lista.salario,1,2,'COMMA')}"/>				 
 					</tr>
 				</tbody>
 				

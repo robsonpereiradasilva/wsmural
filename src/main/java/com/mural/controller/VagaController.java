@@ -60,9 +60,9 @@ public class VagaController {
 	public String getVaga(Model model,
 			@ModelAttribute("listVaga") Lista listVaga,
 			BindingResult result) {
-		List<Vaga> lista = this.vagaRepository.findAll();
-		model.addAttribute("lista", lista);
-		return "lista";
+		List<Vaga> vaga = this.vagaRepository.findAll();
+		model.addAttribute("vaga", vaga);
+		return "vaga";
 		
 	}
 			
