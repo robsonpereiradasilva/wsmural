@@ -19,8 +19,8 @@
 	          <span class="navbar-toggler-icon"></span>
 	        </button>
 	        <div class="collapse navbar-collapse" id="navbarCollapse">	          
-	          <form class="form-inline mt-2 mt-md-0" method="get" th:action="@{/pesquisar/(name=${vaga})} th:object="${lista}">
-	            <input class="form-control mr-sm-2" th:type="text" th:field="*{vaga}" th:name="vaga" th:placeholder="Search" th:aria-label="Search">
+	          <form class="form-inline mt-2 mt-md-0" method="get" th:action="@{/pesquisar/vagas} th:object="${Lista}" >
+	            <input class="form-control mr-sm-2" th:type="text" th:field="*{vaga}" th:name="vaga" th:placeholder="Pesquisar" th:aria-label="Pesquisar">
 	            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 	          </form>
 	        </div>

@@ -8,11 +8,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
- 
+import com.mural.model.Lista;
 import com.mural.model.Vaga;
 import com.mural.repository.VagaRepository;
 
@@ -55,12 +57,16 @@ public class VagaController {
 					
 	}
 	
-	@GetMapping(value="pesquisar/{vaga}")
-	public String pesquisaVaga(@PathVariable("vaga") String vaga, Model model) {
-		model.addAttribute("lista",vagaRepository.findByVagaContaining(vaga));		
+	@GetMapping(value="/pesquisar/vagas")
+	public String getVaga(Model model,
+			@ModelAttribute("listVaga") Lista listVaga,
+			BindingResult result) {
+		List<Vaga> lista = this.vagaRepository.findAll(listVaga.getVaga());
+		model.addAttribute("lista", lista);
 		return "index";
+		
 	}
-	
+			
 	
 	
 }
