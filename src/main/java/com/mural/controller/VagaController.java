@@ -23,36 +23,22 @@ import com.mural.repository.VagaRepository;
 
 @Controller
 public class VagaController {
+	
+	@Autowired
+	private VagaRepository vagaRepository;
+	
+	
+	@PostMapping("/cadastrar")
+	public Vaga cadastrarVaga(@Valid @RequestBody Vaga vaga) {
 		
-
-	/*
-	 * Médodo substituido
-	@GetMapping("/")
-	public String usuarios(Model model) {
-		RestTemplate restTemplate = new RestTemplate();
-		
-		ResponseEntity<List<Vaga>> response =
-				restTemplate.exchange(
-						"https://wsemp02.herokuapp.com/", 
-						HttpMethod.GET,
-						null,
-						new ParameterizedTypeReference<List<Vaga>>() { }
-				);					
-		List<Vaga> lista = response.getBody();
-		
-		
-		model.addAttribute("lista", lista);
-		
-		
-		
-		return "index";
+		return vagaRepository.save(vaga);
 	}
-	*/
 	
 	@GetMapping("/")
 	public String vagas (Model model) {
 		ResponseEntity <List<Vaga>> response;
 		response = this.method("https://wsemp02.herokuapp.com");
+		System.out.println(response);
 		List<Vaga> lista = response.getBody();
 		
 		response = this.method("https://wsmural.herokuapp.com/vagas");
