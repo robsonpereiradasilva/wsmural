@@ -23,21 +23,8 @@ import com.mural.repository.VagaRepository;
 
 @Controller
 public class VagaController {
-	
-	@Autowired
-	private VagaRepository vagaRepository;
-	
-	@GetMapping("/vagas")
-	List<Vaga> all(){
-		return vagaRepository.findAll();
-	}
-	
-	@PostMapping("/cadastrar")
-	public Vaga cadastrarVaga(@Valid @RequestBody Vaga vaga) {
 		
-		return vagaRepository.save(vaga);
-	}
-	
+
 	/*
 	 * Médodo substituido
 	@GetMapping("/")
@@ -60,7 +47,7 @@ public class VagaController {
 		
 		return "index";
 	}
-	
+	*/
 	
 	@GetMapping("/")
 	public String vagas (Model model) {
@@ -92,7 +79,7 @@ public class VagaController {
 					
 	}
 	
-	*/
+	
 	
 	
 }
