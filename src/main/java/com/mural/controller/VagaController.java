@@ -55,9 +55,9 @@ public class VagaController {
 					
 	}
 	
-	@GetMapping(value="/pesquisar/{vaga}")
+	@GetMapping(value="pesquisar/{vaga}")
 	public String pesquisaVaga(@PathVariable("vaga") String vaga, Model model) {
-		model.addAllAttributes(vagaRepository.findByVagaContaining(vaga));
+		model.addAttribute("lista",vagaRepository.findByVagaContaining(vaga));		
 		return "index";
 	}
 	
