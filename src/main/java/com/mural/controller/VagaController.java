@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute; 
 import org.springframework.web.client.RestTemplate;
 
-import com.mural.model.Lista;
+import com.mural.model.myFormObject;
 import com.mural.model.Vaga;
 import com.mural.repository.VagaRepository;
+import com.mural.repository.myFormObjectRepository;
 
 
 
@@ -24,6 +25,8 @@ public class VagaController {
 	
 	@Autowired
 	private VagaRepository vagaRepository;
+	
+	private myFormObjectRepository myFormObjectRepository;
 	
 	@GetMapping("/")
 	public String vagas (Model model) {
@@ -58,9 +61,9 @@ public class VagaController {
 	
 	@GetMapping(value="/pesquisar/vagas")
 	public String getVaga(Model model,
-			@ModelAttribute("listVaga") Lista listVaga,
+			@ModelAttribute("myFormObject") myFormObject myFormObject,
 			BindingResult result) {
-		List<Vaga> vagas = this.vagaRepository.findAll();
+		List<myFormObject> vagas = this.myFormObjectRepository.findAll();
 		model.addAttribute("vagas", vagas);
 		return "vaga";
 		
