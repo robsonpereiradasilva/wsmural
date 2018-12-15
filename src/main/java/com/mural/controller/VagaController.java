@@ -39,6 +39,7 @@ public class VagaController {
 	}
 	
 	/*
+	 * Médodo substituido
 	@GetMapping("/")
 	public String usuarios(Model model) {
 		RestTemplate restTemplate = new RestTemplate();
