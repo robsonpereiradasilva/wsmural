@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.mural.model.Vaga;
 
 @Repository
-public interface VagaRepository extends JpaRepository<Vaga, Long>{ 
-	
+public interface VagaRepository extends JpaRepository<Vaga, Long>{ 	
 
 }

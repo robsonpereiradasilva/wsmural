@@ -12,15 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.mural.model.Vaga;
-import com.mural.repository.VagaRepository;
 
 
 @Controller
 public class VagaController {
-	
-	@Autowired
-	private VagaRepository vagaRepository;
-	
+		
 	
 	
 	@GetMapping("/")
@@ -53,6 +49,7 @@ public class VagaController {
 		return response;
 					
 	}
+	
 	
 	
 			
