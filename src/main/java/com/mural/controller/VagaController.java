@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
 import com.mural.model.Vaga;
+import com.mural.repository.VagaRepository;
+import com.mural.service.VagaService;
 
 
 @Controller
@@ -50,10 +52,5 @@ public class VagaController {
 		return response;
 					
 	}
-	/*
-	@GetMapping(value = "/pesquisar/{vaga}")
-	public String findByVagaContaining(@PathVariable ("vaga") String vaga, Model model) {
-		model.add
-		
-	}*/
+
 }
