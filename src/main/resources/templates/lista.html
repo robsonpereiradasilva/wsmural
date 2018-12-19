@@ -16,16 +16,14 @@
 			<h2>Vagas encontradas</h2>
 			
 				<table class="table table-hover">
-				<thead>
-					<th scope="col">id</th>
+				<thead>				 
 					<th scope="col">Empresa</th>
 					<th scope="col">Vaga</th>
 					<th scope="col">Descrição</th>
 					<th scope="col">Salário</th>					
 				</thead>
 				<tbody>
-					<tr th:each="lista : ${vaga}">
-						<td th:text="${lista.id}"></td>
+					<tr th:each="lista : ${vaga}">						
 						<td th:text="${lista.empresa}"></td>
 						<td th:text="${lista.vaga}"></td>
 						<td th:text="${lista.descricao}"></td>
