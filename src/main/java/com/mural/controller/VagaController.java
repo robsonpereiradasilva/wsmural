@@ -20,7 +20,9 @@ import com.mural.service.VagaService;
 @Controller
 public class VagaController {
 		
-	
+
+	@Autowired
+	private VagaRepository vagaRepository;
 	
 	@GetMapping("/")
 	public String vagas (Model model) {
@@ -51,6 +53,12 @@ public class VagaController {
 		
 		return response;
 					
+	}
+	
+	@GetMapping(value = "/pesquisar/{vaga}")
+	public String findByVagaContaining(@PathVariable ("vaga") String vaga, Model model) {
+		model.addAttribute("lista",vagaRepository.findByVagaContaining(vaga));
+		return "lista";
 	}
 
 }
