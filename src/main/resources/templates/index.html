@@ -19,7 +19,7 @@
 	          <span class="navbar-toggler-icon"></span>
 	        </button>
 	        <div class="collapse navbar-collapse" id="navbarCollapse">	          
-	          <form class="form-inline mt-2 mt-md-0" method="get" th:action="@{/pesquisar/${vaga}}" th:object="${vaga}">
+	          <form class="form-inline mt-2 mt-md-0" method="get" th:action="@{/pesquisar/__${vaga.vaga}__}" th:object="${vaga}">
 	            <input id="filter" type="text" th:value="${vaga}" class="form-control input-sm w-auto inline m-r"/>
 	            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 	          </form>
